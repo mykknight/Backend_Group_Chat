@@ -34,7 +34,7 @@ exports.login = async(req,res) => {
                 if(err) return res.status(500).json({sucess: false, msg: 'Something went wrong'});
                 else{
                     if(output==true){
-                        return res.status(210).json({sucess: true, msg: 'User Successfully Login', token: GenAccessToken(user[0].id,user[0].UserName)});
+                        return res.status(210).json({sucess: true, msg: 'User Successfully Login', token: GenAccessToken(user[0].id,user[0].UserName), person: user[0].UserName});
                     }
                     else res.status(401).json({sucess: false, msg: 'Password is incorrect'});
                 }
