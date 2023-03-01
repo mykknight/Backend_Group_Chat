@@ -13,9 +13,15 @@ app.use(
 );
 
 const adminrot = require('./Routes/admin');
-
+const chatrot = require('./Routes/chat');
+app.use('/chat',chatrot);
 app.use('/user', adminrot);
 
+const User = require('./Models/user');
+const Chat = require('./Models/msg');
+
+User.hasMany(Chat);
+Chat.belongsTo(User);
 
 sequelize
 //.sync({force: true})
