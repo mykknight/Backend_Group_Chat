@@ -19,9 +19,18 @@ app.use('/user', adminrot);
 
 const User = require('./Models/user');
 const Chat = require('./Models/msg');
+const Group = require('./Models/Group');
+const GroupChat = require('./Models/groupChat');
+const groupchat = require('./Models/groupChat');
 
 User.hasMany(Chat);
 Chat.belongsTo(User);
+
+Group.belongsToMany(User, {through: groupchat});
+User.belongsToMany(Group, {through: groupchat});
+
+Group.hasMany(Chat);
+Chat.belongsTo(Group);
 
 sequelize
 //.sync({force: true})

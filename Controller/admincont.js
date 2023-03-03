@@ -1,4 +1,6 @@
 const User = require('../Models/user');
+const Group = require('../Models/Group');
+const GroupChat = require('../Models/groupChat');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -45,4 +47,44 @@ exports.login = async(req,res) => {
     catch(err) {
         console.log(err);
     }
+}
+
+exports.creategroup = async(req,res) => {
+
+    try {
+        const {GroupName, GroupUsers} = req.body;
+
+        const group = await Group.create({GroupName});
+        
+        GroupUsers.forEach(async userid => {
+            await GroupChat.create({groupId: group.id, userId: userid});
+        });
+
+        res.status(230).json({sucess: true, msg: 'Group Successfully created'});
+    }
+    catch(err) {
+        console.log(err);
+    }
+    
+}
+
+exports.getGroup = async (req,res) => {
+
+    try {
+        const lastgrpid = Number(req.params.lastgrpid);
+        const groups = await req.user.getGroups({
+            offset: lastgrpid
+        });
+        res.status(231).json(groups);
+    }
+    catch(err) {
+        console.log(err);
+    }
+}
+
+exports.getusers = async (req,res) => {
+    const users = await User.findAll({
+        attributes: ['UserName', 'id']
+    });
+    res.status(210).json(users);
 }
