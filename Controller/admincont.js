@@ -53,11 +53,11 @@ exports.creategroup = async(req,res) => {
 
     try {
         const {GroupName, GroupUsers} = req.body;
-
         const group = await Group.create({GroupName});
-        
+        console.log(GroupUsers);
         GroupUsers.forEach(async userid => {
-            await GroupChat.create({groupId: group.id, userId: userid});
+            if(userid == req.user.id) await GroupChat.create({groupId: group.id, userId: userid, isAdmin: true})
+            else await GroupChat.create({groupId: group.id, userId: userid, isAdmin: false})
         });
 
         res.status(230).json({sucess: true, msg: 'Group Successfully created'});
@@ -71,9 +71,7 @@ exports.creategroup = async(req,res) => {
 exports.getGroup = async (req,res) => {
 
     try {
-        const lastgrpid = Number(req.params.lastgrpid);
         const groups = await req.user.getGroups({
-            offset: lastgrpid
         });
         res.status(231).json(groups);
     }

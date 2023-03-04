@@ -14,6 +14,8 @@ app.use(
 
 const adminrot = require('./Routes/admin');
 const chatrot = require('./Routes/chat');
+const grouprot = require('./Routes/group');
+app.use('/group', grouprot);
 app.use('/chat',chatrot);
 app.use('/user', adminrot);
 

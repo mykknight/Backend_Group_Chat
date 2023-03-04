@@ -7,7 +7,9 @@ const groupchat = sequelize.define( 'groupchat' , {
         allowNull: false,
         primaryKey: true,
         autoIncrement: true
-    }
+    },
+
+    isAdmin: Sequelize.BOOLEAN
 });
 
 module.exports = groupchat;

@@ -14,7 +14,7 @@ Router.post('/login', admincontroller.login);
 
 Router.post('/creategroup', Auth.authentication, admincontroller.creategroup);
 
-Router.get('/getgroups/:lastgrpid', Auth.authentication, admincontroller.getGroup);
+Router.get('/getgroups', Auth.authentication, admincontroller.getGroup);
 
 Router.get('/getusers', admincontroller.getusers);
 module.exports = Router;
