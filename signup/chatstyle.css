@@ -1,0 +1,207 @@
+body {
+    background-color: bisque;
+}
+
+#msg-form {
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+}
+
+.group-box {
+    float: left;
+    height: 300px;
+    width: 300px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    background-color:rgb(238, 244, 66);
+    padding: 20px;
+    margin: 10% auto 0;
+    border-color: black;
+    position: relative;
+}
+
+.chat-box {
+    width: 500px; 
+    float:right; 
+    height:900px; 
+    background:rgb(94, 220, 234); 
+    margin:20px auto;
+    padding: 20px;
+    opacity: 0;
+    pointer-events:none;
+
+ 
+}
+
+.chat-box.hidden {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#creategroup {
+    background-color: cadetblue;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    color: black;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    
+}
+
+#addgrp, #close-pop {
+    background-color: thistle;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    margin: 10%;
+}
+
+.popup-input {
+    border-radius: 20px;
+    padding: 5px;
+    margin: 10px 0;
+    width: 70%;
+    border: 1px solid #999;
+}
+
+.popup-lable {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.popup-1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events:none;
+
+}
+
+.popup-1.show {
+    opacity: 1;
+    pointer-events: auto;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.popup-form {
+    background-color: rgb(105, 235, 233);
+    width: 400px;
+    max-width: 100%;
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    text-align: center;
+    
+}
+
+.popup-table {
+    margin: 3%;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#all-users {
+    margin: 1%;
+}
+
+.group-buttons, .makeadmin {
+    margin: 2%;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    border: 0;
+    width: 100px, auto;
+    font-weight: bold;
+}
+
+.group-details-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events:none;
+}
+
+.group-details-box.show {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    pointer-events: auto;
+    background-color: rgba(0,0,0,0.3);
+
+}
+
+.detail-buttons, .removeuser {
+    margin: 2%;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    border: 0;
+    width: auto;
+    font-weight: bold;
+    background-color: brown;
+    color: aliceblue;
+}
+
+.detail-box {
+    width: 600px;
+    height: 300px;
+    background-color: rgb(83, 173, 140);
+    padding: 30px 50px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    text-align: center;
+    font-weight: bold;
+}
+
+.filter-form {
+    margin: 3%;
+    border-radius: 10px;
+}
+
+#save-details {
+    position: absolute;
+    top: 450px;
+    right: 430px;
+    margin: 2%;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    border: 0;
+    width: 100px;
+    font-weight: bold;
+}
+
+#search-filter, #filter-input {
+    margin: 2%;
+    border-radius: 10px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    border: 0;
+}
+
+.alreadyadmin {
+    margin: 2%;
+    border-radius: 10px;
+    background-color: green;
+    color: black;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    border: 0;
+    width: 100px, auto;
+    font-weight: bold;
+    pointer-events: none;
+}
+
